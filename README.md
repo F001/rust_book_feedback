@@ -146,17 +146,17 @@
 
   `PinMut` 应改为 `Pin`
   
-  * P299
+* P299
   
-    最上面的代码块中
-    ```rust
-    fn poll(self: PinMut<Self>, cx: &mut Context) -> Poll<Self::Output>
-    ```
-    应改为：
-    ```rust
-    fn poll(self: Pin<&mut Self>, lw: &LocalWaker) -> Poll<Self::Output>
-    ```
+  最上面的代码块中
+  ```rust
+  fn poll(self: PinMut<Self>, cx: &mut Context) -> Poll<Self::Output>
+  ```
+  应改为：
+  ```rust
+  fn poll(self: Pin<&mut Self>, lw: &LocalWaker) -> Poll<Self::Output>
+  ```
     
-    倒数第六行，`PinMut<Self>` 应改为 `Pin<&mut Self>`
+  倒数第六行，`PinMut<Self>` 应改为 `Pin<&mut Self>`
     
-    倒数第五行，`PinMut` 应改为 `Pin`
+  倒数第五行，`PinMut` 应改为 `Pin`
