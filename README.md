@@ -160,3 +160,7 @@
   倒数第六行，`PinMut<Self>` 应改为 `Pin<&mut Self>`
     
   倒数第五行，`PinMut` 应改为 `Pin`
+
+* P300
+
+  第2行和第3行，`PinMut<T>` 改为 `Pin<&mut T>`。
