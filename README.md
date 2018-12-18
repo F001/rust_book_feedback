@@ -11,9 +11,9 @@
   第三块代码中
   ```rust
   let var6 = 12usize; // i6变量是usize类型
-  let var7 = 0x_ff_u8;  // i7变量是u8"类型
+  let var7 = 0x_ff_u8;  // i7变量是u8类型
   ```
-  注释应该分别为 `var6` 变量和 `var7` 变量(多余的引号也去掉)：
+  注释应该分别为 `var6` 变量和 `var7` 变量：
   ```rust
   let var6 = 12usize; // var6变量是usize类型
   let var7 = 0x_ff_u8;  // var7变量是u8类型
