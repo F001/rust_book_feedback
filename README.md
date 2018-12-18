@@ -134,3 +134,29 @@
   
   图片内箭头指向位置错乱了
 
+* P298
+
+  由于Rust设计的改变，跟 `PinMut` 有关的都需要改一下。具体包括
+  
+  `PinMut<'a, T>` 应改为 `Pin<P>`
+  
+  `self: PinMut<Self>` 应改为 `self: Pin<&mut Self>`
+  
+  `PinMut<XXGenerator>` 应改为 `Pin<&mut XXGenerator>`
+
+  `PinMut` 应改为 `Pin`
+  
+  * P299
+  
+    最上面的代码块中
+    ```rust
+    fn poll(self: PinMut<Self>, cx: &mut Context) -> Poll<Self::Output>
+    ```
+    应改为：
+    ```rust
+    fn poll(self: Pin<&mut Self>, lw: &LocalWaker) -> Poll<Self::Output>
+    ```
+    
+    倒数第六行，`PinMut<Self>` 应改为 `Pin<&mut Self>`
+    
+    倒数第五行，`PinMut` 应改为 `Pin`
